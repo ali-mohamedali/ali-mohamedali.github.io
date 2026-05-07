@@ -9,16 +9,6 @@
   <id>aba27805-8377-4370-8bc9-7d1ac2ef7771</id>
 
   <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260507.html"/>
-    <title>I added numbering per tag</title>
-    <updated>2026-05-07T15:29:00+03:00</updated>
-    <id>2026-05-07T15:29:00+03:00</id>
-    <summary>
-In continuation of the previous article, I have
-made numbering articles per tag.
-    </summary>
-  </entry>
-  <entry>
     <link href="http://ali-mohamedali.github.io/blog/20260507-03.html"/>
     <title>Completely automatic</title>
     <updated>2026-05-07T19:31:00+03:00</updated>
@@ -40,7 +30,17 @@ such as tag indexing, and how I programmed it in.
     </summary>
   </entry>
   <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260506.html"/>
+    <link href="http://ali-mohamedali.github.io/blog/20260507-01.html"/>
+    <title>I added numbering per tag</title>
+    <updated>2026-05-07T15:29:00+03:00</updated>
+    <id>2026-05-07T15:29:00+03:00</id>
+    <summary>
+In continuation of the previous article, I have
+made numbering articles per tag.
+    </summary>
+  </entry>
+  <entry>
+    <link href="http://ali-mohamedali.github.io/blog/20260506-01.html"/>
     <title>Hello world! [sic]</title>
     <updated>2026-05-06T15:29:00+03:00</updated>
     <id>2026-05-06T15:29:00+03:00</id>
