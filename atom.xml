@@ -19,6 +19,17 @@ made numbering articles per tag.
     </summary>
   </entry>
   <entry>
+    <link href="http://alimohamedali.dpdns.org/blog/20260507-03.org"/>
+    <title>Completely automatic</title>
+    <updated>2026-05-07 Thu 18:45</updated>
+    <id>2026-05-07 Thu 18:45</id>
+    <summary>
+I just changed up the site so that
+the export script pushes directly to the site.
+ Automatically.
+    </summary>
+  </entry>
+  <entry>
     <link href="http://alimohamedali.dpdns.org/blog/20260507-02.org"/>
     <title>New tag indexing features with more shell scripts</title>
     <updated>2026-05-07T15:31:18+03:00</updated>
