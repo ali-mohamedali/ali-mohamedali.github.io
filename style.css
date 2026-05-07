@@ -1,4 +1,4 @@
-  @font-family {
+  @font-face {
   	     font-family: 'DejaVu Sans';
              src: url('./DejaVuSans.ttf') format('truetype');
              font-weight: normal;
