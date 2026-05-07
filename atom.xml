@@ -21,8 +21,8 @@ made numbering articles per tag.
   <entry>
     <link href="http://ali-mohamedali.github.io/blog/20260507-03.html"/>
     <title>Completely automatic</title>
-    <updated>2026-05-07 Thu 18:45</updated>
-    <id>2026-05-07 Thu 18:45</id>
+    <updated>2026-05-07T19:31:00+03:00</updated>
+    <id>2026-05-07T19:31:00+03:00</id>
     <summary>
 I just changed up the site so that
 the export script pushes directly to the site.
