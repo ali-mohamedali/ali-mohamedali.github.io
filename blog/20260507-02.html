@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-07 Thu 16:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>New tag indexing features with more shell scripts</title>
+<meta name="author" content="Ali Mohamed Ali" />
+<meta name="description" content="Explaining some new features in the time of writing,
+such as tag indexing, and how I programmed it in." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=".."> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><div id="preamble" class="status">
+<center><i>The Personal Website of<br/>Ali Mohamed Ali</i></center>
+<hr/>
+Navigation<br/>
+<a href="/index.html">Home</a> |
+<a href="/about.html">About</a> |
+<a href="/blog.html">Blog</a>
+<hr>
+<a href="/atom.xml">Atom/RSS feed link</a>
+<hr>
+Posts by tag<br/>
+
+<a href="/tag/culture.html">culture (1)</a>|<a href="/tag/essay.html">essay (1)</a>|<a href="/tag/meta.html">meta (3)</a>|<a href="/tag/tech.html">tech (2)</a>|<a href="/tag/test.html">test (2)</a>
+</div>
+<div id="content" class="content">
+<h1 class="title">New tag indexing features with more shell scripts
+<br />
+<span class="subtitle"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-07 Thu&gt; </span></span> :test:meta:tech:</span>
+</h1>
+<p>
+Hello again, just the morning after.  I've figured out a few things,
+namely:
+</p>
+<ul class="org-ul">
+<li>Refurbishing the site CSS</li>
+<li>Basic tagging features!!</li>
+</ul>
+
+<p>
+As you can probably tell in regards to the first item, I am not
+talented with web design, only making humble blogs like I know I could
+make.  At least it's better than everything being arranged in a full
+width series of blocks, and a navigation bar at the top.  I got
+inspiration from MediaWiki's look, since I use that a lot.  I figured
+side columns are an acceptable web design tradition even now,
+<i>hopefully</i>.
+</p>
+
+<p>
+And in regards to tagging features, <b>YES!</b> There are tags for blog
+posts, so you don't have to sift through all the titles to find what's
+relevant.  I've done multiple things actually.  Posts always were
+tagged, but I now have added an automatic index for every tag present,
+that appears on the sidebar, much like Wordpress or Blogspot.  I'll
+probably work on some feature like automatic linking to the index
+every time the tag is added, and numbering articles per tag in the
+sidebar.  But for now, this is phenomenal organisation, no?
+</p>
+
+<p>
+How does it work? Well, I've tied together some more shell scripts
+into my export.sh file that
+</p>
+<ol class="org-ol">
+<li>Searches in the blog directory for pages matching tags</li>
+<li>Grabs its title and filename</li>
+<li>Constructs a list of links to matching files</li>
+<li>Pipes all that with some formatting into the index for a tag</li>
+<li>Makes a list of tags as linked to their indices</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-sh">#!/bin/bash
+
+mkdir -p tag
+
+grep '#+FILETAGS: ' $(find blog/*.org) \
+| grep -oEe ' :.*$' \
+| tr -d ' \n' \
+| sed 's;:\{2,\};:;' \
+| sed 's;^:;;' \
+| tr ':' '\n' \
+| sort | uniq &gt; tags
+
+export_tag () {
+    echo '#+TITLE: ' $1 '(tag)' &gt; tag/$1.org
+    grep -HEe '^#\+TITLE:' \
+    $(grep -HEe "^#\+(FILETAGS:.*:($1):)" $(find blog/*.org) \
+      | sed 's;\(^.*\):#+FILETAGS.*$;\1;') \
+    | sed 's;\(^.*\):#+TITLE: *\(.*$\); - [[../\1][\2]];' &gt;&gt; tag/$1.org
+}
+
+for x in $(cat tags)
+do
+  export_tag $x;
+done
+
+
+echo '#+BEGIN_EXPORT html' &gt; tags-index.org
+cat tags \
+| sed 's;\(^.*$\);&lt;a href=\"/tag/\1.html\"&gt;\1&lt;/a&gt;;' \
+| tr '\n' '|' \
+| sed 's;|$;\n;' &gt;&gt; tags-index.org
+echo '#+END_EXPORT' &gt;&gt; tags-index.org
+</pre>
+</div>
+
+<p>
+Some smart tricks I've done here are to embed this as HTML within a
+.org file, so I may include it in the header.org, which gets exported
+to HTML complete, and is kept on every webpage.  The illusion of a
+dynamic website, when it's really a <i>very</i> well maintained static
+site.
+</p>
+
+<p>
+I don't use many special tools in my script, as it's just extraction
+and text substitution that come into play.  I have a good enough
+knowledge of regex to enable this, too.
+</p>
+
+<p>
+It's really amazing that such a simple program can do so much with the
+construction of even simpler tools together.  This is an example of
+the kind of stuff that shell scripts come in handy for: <i>automation</i>.
+Automating all the boring algorithmic tasks.
+</p>
+
+<p>
+Complexity is inversely proportional to convolution.  The more complex
+something is, the less convoluted it is, et vice versa.
+</p>
+
+<p>
+I don't know if I've explained this before, but I've had my fair share
+of tedious manual writing of HTML.  Before my C++ knowledge would've
+been able to solve the problem, before I was even on a system that
+offered , I made webpages with HTML and CSS.  It was tiring
+to proofread everything.  But now, after studying the Unix shell, I
+can finally apply my knowledge, and understand the magic therein.
+Don't you think we were meant to make our computers work for us,
+approach automating everything?
+</p>
+</div>
+<div id="postamble" class="status">
+<div>
+<p class="author">Author: Ali Mohamed Ali <<a href="mailto:ali@lambda">ali@lambda</a>></p>
+<p class="date">Date: 2026-05-07 Thu 15:31</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+<p>License: CC-BY-SA 4.0</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p></div>
+</div>
+</body>
+</html>
