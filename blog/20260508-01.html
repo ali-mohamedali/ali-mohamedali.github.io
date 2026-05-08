@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-05-08 Fri 18:00 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hello world! (yet again)</title>
+<meta name="author" content="Ali Mohamed Ali" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=".."> UP </a>
+ |
+ <a accesskey="H" href="/"> HOME </a>
+</div><div id="preamble" class="status">
+<div>
+<center>The personal website of<br>Ali Mohamed Ali</center>
+<hr>
+Navigation:
+<ul>
+<li>
+<a href="/index.html">Home</a></li>
+<li>
+<a href="/about.html">About me</a></li>
+<li>
+<a href="/blog.html">Blog</a></li>
+</ul>
+<hr>
+<a href="/atom.xml">Atom/RSS feed link</a>
+<hr><a href="/tag/first.html">first (1)</a>|<a href="/tag/meta.html">meta (1)</a>|<a href="/tag/tech.html">tech (1)</a>|<a href="/tag/test.html">test (1)</a>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Hello world! (yet again)
+<br />
+<span class="subtitle"><span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-08 Fri&gt;</span></span>[first]]</span>
+</h1>
+<p>
+#+DATE <span class="timestamp-wrapper"><span class="timestamp">&lt;2026-05-08 Fri 17:39&gt;</span></span>
+</p>
+<p>
+Hello world!
+</p>
+
+<p>
+Another introduction to the blog that I must write yet again.  At
+least this this time, I'll spare the reader of the agony of having to
+read an essay about the nature of a blog and how it is so transcendent
+beyond classical texts, and how the whole world has changed from it.
+I'm not that melodramatic, nor energetic enough to be that pretentious
+at the moment.  Instead, I'll start this serial with an adequately
+charismatic and funny story about how I got things <i>messed up, quick</i>.
+</p>
+
+<p>
+Why, you might ask?  Because at the moment, a small mistake just cost
+me all the pages on the site.  I had to rewrite every unique thing
+over again.  I had written a bunch of scripts to automate the whole
+website, and now all I wanted was that every tag in export context be
+replaced by a link to that tag's index.  So a simple sed command in
+the editor would've been enough, right?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"># the regex has been omitted due to unnecessary complexity
+# is what I would say if I was a COWARD, which I am not
+#/bin/bash
+
+for i in $(find *.org blog/*.org)
+do
+    sed -E '/^#\+FILETAGS/! s;[^a-z]+:([a-z-]+)[^ ]+{1};:[[/tag/\1][\1]];g' \
+          $i &gt; $i;
+done
+</pre>
+</div>
+
+<p>
+Notice that last line right there? How I pipe <i>into the same file I'm
+opening</i>?  Well, in POSIX sh, when stdout is redirected into a file,
+the file clears up before the command even runs.  This means that
+despite me thinking that sed was going to access the files, buffer the
+output, then place it there, I was not.  1&gt; is simply <b>not buffered</b>.
+If you redirect it somewhere, it restarts the file to start writing
+there.
+</p>
+
+<p>
+Thus, the sed command was finding patterns in an empty file, and so
+that export trial was <i>suspiciously fast</i>.  It didn't hit me until I
+looked at the website and found everything <b>empty</b>.  No text besides
+the postamble(footer).  I didn't put a git repo for my blog's content,
+I just never thought that I could've made a mistake and accidentally
+trashed all my effort.
+</p>
+
+<p>
+Why write something so incompetent, even if you weren't thinking on
+all six cylinders when you interpreted that stream redirection
+command?  Well, it was out of impatience.  I went impatiently, not
+bothering to check the sed manpage.  This was my punishment, for not
+<b>R<sub>eading</sub>TFM</b>.
+</p>
+
+<p>
+As the first lesson of this blog, what can we learn?
+</p>
+<ol class="org-ol">
+<li>RTFM, no matter what</li>
+<li>Keep backups of everything</li>
+<li>Think patiently and think well because</li>
+<li>Nothing can save you from heedlessness/stupidity</li>
+</ol>
+
+<p>
+Isn't that just the best 4 obvious rules of thumb that I had violated
+all at once?  It certainly is.  The more you know&#x2026;
+</p>
+</div>
+<div id="postamble" class="status">
+<div>
+<p class="author">Author: Ali Mohamed Ali <<a href="mailto:someguyshutup5@gmail.com">someguyshutup5@gmail.com</a>></p>
+<p class="date">Date: 2026-05-08 Fri 18:00</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+<p>License: CC-BY-SA 4.0</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p></div>
+</div>
+</body>
+</html>
