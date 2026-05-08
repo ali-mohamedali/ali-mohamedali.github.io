@@ -8,46 +8,6 @@
   </author>
   <id>aba27805-8377-4370-8bc9-7d1ac2ef7771</id>
 
-  <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260507-03.html"/>
-    <title>Completely automatic</title>
-    <updated>2026-05-07T19:31:00+03:00</updated>
-    <id>2026-05-07T19:31:00+03:00</id>
-    <summary>
-I just changed up the site so that
-the export script pushes directly to the site.
- Automatically.
-    </summary>
-  </entry>
-  <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260507-02.html"/>
-    <title>New tag indexing features with more shell scripts</title>
-    <updated>2026-05-07T15:31:18+03:00</updated>
-    <id>2026-05-07T15:31:18+03:00</id>
-    <summary>
-Explaining some new features in the time of writing,
-such as tag indexing, and how I programmed it in.
-    </summary>
-  </entry>
-  <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260507-01.html"/>
-    <title>I added numbering per tag</title>
-    <updated>2026-05-07T15:29:00+03:00</updated>
-    <id>2026-05-07T15:29:00+03:00</id>
-    <summary>
-In continuation of the previous article, I have
-made numbering articles per tag.
-    </summary>
-  </entry>
-  <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260506-01.html"/>
-    <title>Hello world! [sic]</title>
-    <updated>2026-05-06T15:29:00+03:00</updated>
-    <id>2026-05-06T15:29:00+03:00</id>
-    <summary>
-The first post of a blog is the most difficult to write. Sic.
-This is a disorganized essay about the nature of writing, and
-where the blog lies in the middle.
     </summary>
   </entry>
 </feed>
