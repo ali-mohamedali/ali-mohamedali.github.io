@@ -14,9 +14,9 @@
 	     min-height: 30rem;
 	     float: left;
 	     margin: auto;
-	     margin-right: 0;
+	     margin-left: 0;
 	     margin-bottom: 2rem;
-	     margin-left: 5%;
+	     margin-right: 5%;
 	     background-color: #dddddd;
 	     padding: 2%; }
   .title  { text-align: center;
@@ -45,9 +45,9 @@
       color: #b2b280;
       float: right;
       margin-bottom: 4px;
-      margin-left: 0;
+      margin-right: 0;
       margin-top: 0;
-      margin-right: 7%; }
+      margin-left: 7%; }
   #postamble a, #preamble a, .sidebar a {
       color: #cfcfcf;
       text-decoration: none; }
