@@ -6,7 +6,10 @@
              font-display: swap;
   }
 
-  body { background-color: #505075; font-family: 'DejaVu Sans'; }
+  body {
+             background-color: #505075;
+	     font-family: 'DejaVu Sans';
+	     text-indent: 2rem; } 
   #content { width: 60%;
 	     min-height: 30rem;
 	     float: right;
