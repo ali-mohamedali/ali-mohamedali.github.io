@@ -48,11 +48,11 @@
       margin-right: 0;
       margin-top: 0;
       margin-left: 7%;
-      height: 2rem;
+      max-height: 2rem;
       overflow: hidden;
       transition: height 2s; }
   #postamble:hover, #preamble:hover, .sidebar:hover {
-      height: fit-content; }
+      max-height: 1000px; }
   #postamble a, #preamble a, .sidebar a {
       color: #cfcfcf;
       text-decoration: none; }
