@@ -48,10 +48,9 @@
       margin-right: 0;
       margin-top: 0;
       margin-left: 20%; }
-  #postable:hover, #preamble:hover, .sidebar:hover {
+  #preamble:hover, .sidebar:hover {
       margin-left: 5%;
-      width: 22%;
-  }
+      width: 22%; }
   #postamble a, #preamble a, .sidebar a {
       color: #cfcfcf;
       text-decoration: none; }
