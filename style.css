@@ -12,7 +12,7 @@
 	     text-indent: 5px; } 
   #content { width: 60%;
 	     min-height: 30rem;
-	     float: left;
+	     float: right;
 	     margin: auto;
 	     margin-left: 0;
 	     margin-bottom: 2rem;
@@ -43,7 +43,7 @@
       padding: 2%;
       background-color: #222222;
       color: #b2b280;
-      float: right;
+      float: left;
       margin-bottom: 4px;
       margin-right: 0;
       margin-top: 0;
