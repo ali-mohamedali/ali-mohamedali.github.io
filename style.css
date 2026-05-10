@@ -50,7 +50,7 @@
       margin-left: 7%;
       height: 2rem;
       overflow: hidden;
-      transition: height 1s; }
+      transition: height 2s; }
   #postamble:hover, #preamble:hover, .sidebar:hover {
       height: fit-content; }
   #postamble a, #preamble a, .sidebar a {
