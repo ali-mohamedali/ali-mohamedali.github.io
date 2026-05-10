@@ -52,7 +52,7 @@
       overflow: hidden;
       transition: height 2s; }
   #postamble:hover, #preamble:hover, .sidebar:hover {
-      max-height: 100rem; }
+      max-height: 1000px; }
   #postamble a, #preamble a, .sidebar a {
       color: #cfcfcf;
       text-decoration: none; }
