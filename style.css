@@ -39,7 +39,7 @@
   .underline { text-decoration: underline; }
   #postamble, #preamble, .sidebar {
       font-size: 90%;
-      width: 22%;
+      width: 7%;
       padding: 2%;
       background-color: #222222;
       color: #b2b280;
@@ -47,7 +47,11 @@
       margin-bottom: 4px;
       margin-right: 0;
       margin-top: 0;
-      margin-left: 5%; }
+      margin-left: 20%; }
+  #postable:hover, #preamble:hover, .sidebar:hover {
+      margin-left: 5%;
+      width: 22%;
+  }
   #postamble a, #preamble a, .sidebar a {
       color: #cfcfcf;
       text-decoration: none; }
