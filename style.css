@@ -12,7 +12,7 @@
 	     text-indent: 2rem; } 
   #content { width: 60%;
 	     min-height: 30rem;
-	     float: right;
+	     float: left;
 	     margin: auto;
 	     margin-left: 0;
 	     margin-bottom: 2rem;
@@ -43,16 +43,11 @@
       padding: 2%;
       background-color: #222222;
       color: #b2b280;
-      float: left;
+      float: right;
       margin-bottom: 4px;
       margin-right: 0;
       margin-top: 0;
-      margin-left: 7%;
-      max-height: 2rem;
-      overflow: hidden;
-      transition: height 2s; }
-  #postamble:hover, #preamble:hover, .sidebar:hover {
-      max-height: 1000px; }
+      margin-left: 7%; }
   #postamble a, #preamble a, .sidebar a {
       color: #cfcfcf;
       text-decoration: none; }
