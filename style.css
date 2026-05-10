@@ -48,7 +48,8 @@
       margin-right: 0;
       margin-top: 0;
       margin-left: 7%;
-      height: 3rem; }
+      height: 3rem;
+      overflow: hidden;}
   #postamble:hover, #preamble:hover, .sidebar:hover {
       height: fit-content; }
   #postamble a, #preamble a, .sidebar a {
