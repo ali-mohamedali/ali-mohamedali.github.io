@@ -14,9 +14,9 @@
 	     min-height: 30rem;
 	     float: left;
 	     margin: auto;
-	     margin-left: 0;
+	     margin-right: 0;
 	     margin-bottom: 2rem;
-	     margin-right: 5%;
+	     margin-left: 5%;
 	     background-color: #dddddd;
 	     padding: 2%; }
   .title  { text-align: center;
