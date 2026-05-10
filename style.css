@@ -9,7 +9,7 @@
   body {
              background-color: #505075;
 	     font-family: 'DejaVu Sans';
-	     text-indent: 2rem; } 
+	     text-indent: 12px; } 
   #content { width: 60%;
 	     min-height: 30rem;
 	     float: left;
