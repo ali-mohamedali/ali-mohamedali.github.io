@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-05-12 Tue 22:15 -->
+<!-- 2026-05-12 Tue 23:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The first few images!</title>
@@ -52,19 +52,97 @@ Nothing out of the ordinary.
 
 <p>
 <center><img src="https://lh3.googleusercontent.com/d/1Hx-er-VsOrvsVgfhYtbksOgPiIX4acY_"></center>
+</p>
+
+<p>
+The mandatory image in the start to capture attention has been placed,
+now we can show some of the source code behind it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh">#!/bin/bash
+
+sed -i -Ee \
+    's;\[\[https:\/\/drive.google.com\/file\/d\/(.{,35})\/view\?.*\]\];@@html:&lt;center&gt;&lt;img src=\"https://lh3.googleusercontent.com/d/\1\"&gt;&lt;/center&gt;@@;g' $1;
+sed -i -Ee \
+    's;\/view\?usp=drive_link;;g' $1
+</pre>
+</div>
+
+<p>
+Based on <a href="https://scatteringclouds.com/how-to-host-images-using-google-drive/">this other blog post here</a>, I constructed a fragile little
+script that does the job to convert straight-up Org mode links to
+drive resources on drive.google.com to embedded html img tags
+somewhere where the resources are being kept.
+</p>
+
+<p>
+I don't exactly know if it'll change any time in the future.  From
+that linked post, one can tell that Google does change their drive url
+argument syntax &#x2014; in shell terminology &#x2014; but I haven't seen a
+change in the Google Drive image storage domain/URL scheming.  This is
+probably for longevity, since I can imagine holding the world's images
+on your shoulders does incur the responsibility that you don't handle
+them lightly.
+</p>
+
+<p>
+Besides that, I also must comment that this is lazy, since I didn't
+make any elisp code to get Org mode to do this kind of thing for me
+during export, but I've done similar tricks to format the text before
+it even enters any processing and so long as one ensures the changes
+aren't compounding, it'll never be a disadvantage.  I like to justify
+this as being annoyed with the inconvenience of the existing language
+that I make a macro layer that lets me write in my own language.  One
+could also comment that using shell scripts and using elisp are just
+two ways of achieving the same goal functionally.  It annoys me often
+to even have a feeling that I <i>might just be using the wrong
+programming language for the job</i>.
+</p>
+
+<p>
+People have done this macro language thing with all lisps (in fact,
+it's well known for its macro capabilities), and in an ugly way with
+the systems language C (someone made C look like Fortran, but I forgot
+where the link was).  Now exiting that tangent of ours,
+</p>
+
+<p>
 <center><img src="https://lh3.googleusercontent.com/d/1BbA994eBwWN07CVmRNoHCw3TR8QlJALS"></center>
+</p>
+
+<p>
+Why am I linking to these from my google drive?  Because there is a
+stark lack of mature, rights-respecting, license-respecting image
+hosting services.  I can't keep good images on github, so I use this
+for the moment, as I also cannot host my images alone.  If I could, I
+would, lol.
+</p>
+
+<p>
 <center><img src="https://lh3.googleusercontent.com/d/1k5VUPykYEB0bvSrcjMNKLeFFyf9pidXI"></center>
+</p>
+
+<p>
 <center><img src="https://lh3.googleusercontent.com/d/1jFgkskexm52P5WRr_ZJYKKf0J3d7SmXf"></center>
+</p>
+
+<p>
+How are the doodles?
 </p>
 
 <p>
 Let's see if the script I set up to make these image links work works?
 </p>
+
+<p>
+PS: It does!
+</p>
 </div>
 <div id="postamble" class="status">
 <center>More info...</center><hr>
 <span class="author">Author: Ali Mohamed Ali <<a href="mailto:someguyshutup5@gmail.com">someguyshutup5@gmail.com</a>></span><br>
-<span class="date">Date: 2026-05-12 Tue 22:15</span><br>
+<span class="date">Date: 2026-05-12 Tue 23:02</span><br>
 <span class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</span><br>
 <span>License: CC-BY-SA 4.0</span><br>
 <span class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></span>
