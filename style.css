@@ -182,7 +182,7 @@
   dt { font-weight: bold; }
   .footpara { display: inline; }
   .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; width: 80%; }
+  .figure { padding: 1em; }
   .figure p { text-align: center; }
   .equation-container {
     display: table;
@@ -216,3 +216,4 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
+  img { width: 80%; }
