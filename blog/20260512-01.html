@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-06-06 Sat 13:05 -->
+<!-- 2026-08-27 Thu 02:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The first few images!</title>
@@ -33,7 +33,7 @@ Navigation:
 </ul>
 <hr>
 <a href="/atom.xml">Atom/RSS feed link</a>
-<hr><a href="/tag/art.html">art (1)</a>|<a href="/tag/doodle.html">doodle (1)</a>|<a href="/tag/first.html">first (1)</a>|<a href="/tag/gnu.html">gnu (1)</a>|<a href="/tag/image.html">image (1)</a>|<a href="/tag/meta.html">meta (1)</a>|<a href="/tag/tech.html">tech (2)</a>|<a href="/tag/test.html">test (2)</a>|<a href="/tag/web.html">web (1)</a>
+<hr><a href="/tag/art.html">art (1)</a>|<a href="/tag/doodle.html">doodle (1)</a>|<a href="/tag/first.html">first (1)</a>|<a href="/tag/gnu.html">gnu (1)</a>|<a href="/tag/image.html">image (1)</a>|<a href="/tag/meta.html">meta (2)</a>|<a href="/tag/tech.html">tech (3)</a>|<a href="/tag/test.html">test (3)</a>|<a href="/tag/time.html">time (1)</a>|<a href="/tag/web.html">web (1)</a>
 </div>
 </div>
 <div id="content" class="content">
@@ -60,12 +60,12 @@ now we can show some of the source code behind it.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh">#!/bin/bash
-
-sed -i -Ee \
-    's;\[\[https:\/\/drive.google.com\/file\/d\/(.{,35})\/view\?.*\]\];@@html:&lt;center&gt;&lt;img src=\"https://lh3.googleusercontent.com/d/\1\"&gt;&lt;/center&gt;@@;g' $1;
-sed -i -Ee \
-    's;\/view\?usp=drive_link;;g' $1
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/bin/</span><span style="font-weight: bold;">bash</span><span style="font-weight: bold; font-style: italic;">
+</span>
+sed -i -Ee <span style="font-style: italic;">\</span>
+    <span style="font-style: italic;">'s;\[\[https:\/\/drive.google.com\/file\/d\/(.{,35})\/view\?.*\]\];@@html:&lt;center&gt;&lt;img src=\"https://lh3.googleusercontent.com/d/\1\"&gt;&lt;/center&gt;@@;g'</span> $<span style="font-weight: bold; font-style: italic;">1</span>;
+sed -i -Ee <span style="font-style: italic;">\</span>
+    <span style="font-style: italic;">'s;\/view\?usp=drive_link;;g'</span> $<span style="font-weight: bold; font-style: italic;">1</span>
 </pre>
 </div>
 
@@ -142,8 +142,8 @@ PS: It does!
 <div id="postamble" class="status">
 <center>More info...</center><hr>
 <span class="author">Author: Ali Mohamed Ali <<a href="mailto:someguyshutup5@gmail.com">someguyshutup5@gmail.com</a>></span><br>
-<span class="date">Date: 2026-06-06 Sat 13:05</span><br>
-<span class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</span><br>
+<span class="date">Date: 2026-08-27 Thu 02:46</span><br>
+<span class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</span><br>
 <span>License: CC-BY-SA 4.0</span><br>
 <span class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></span>
 </div>
