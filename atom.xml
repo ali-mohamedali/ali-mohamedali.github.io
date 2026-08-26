@@ -9,15 +9,6 @@
   <id>aba27805-8377-4370-8bc9-7d1ac2ef7771</id>
 
   <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260827-2.html"/>
-    <title>test</title>
-    <updated>2026-08-27T01:20:23:00+03:00</updated>
-    <id>2026-08-27T01:20:23:00+03:00</id>
-    <summary>
-
-    </summary>
-  </entry>
-  <entry>
     <link href="http://ali-mohamedali.github.io/blog/20260827-1.html"/>
     <title>Returning to writing blogs</title>
     <updated>2026-08-27T01:07:11:00+03:00</updated>
@@ -27,7 +18,7 @@ An extended update
     </summary>
   </entry>
   <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260606-01.html"/>
+    <link href="http://ali-mohamedali.github.io/blog/20260606-1.html"/>
     <title>gnu.org and nongnu.org up again!</title>
     <updated>2026-06-06T12:23:00+03:00</updated>
     <id>2026-06-06T12:23:00+03:00</id>
@@ -37,23 +28,13 @@ the outage and returning online!
     </summary>
   </entry>
   <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260512-01.html"/>
+    <link href="http://ali-mohamedali.github.io/blog/20260512-1.html"/>
     <title>The first few images!</title>
     <updated>2026-05-12T16:29:00+03:00</updated>
     <id>2026-05-12T16:29:00+03:00</id>
     <summary>
 I try out adding images to my blog.  Tested
 out with some doodles of mine.
-    </summary>
-  </entry>
-  <entry>
-    <link href="http://ali-mohamedali.github.io/blog/20260508-01.html"/>
-    <title>Hello world! (yet again)</title>
-    <updated>2026-05-08T18:06:00+03:00</updated>
-    <id>2026-05-08T18:06:00+03:00</id>
-    <summary>
-The first blog post of Sic.  I describe how I messed up all my written content with one stupid mistake.
-A shell command that cost me the couple of hours I spent setting up the written content.
     </summary>
   </entry>
 </feed>
