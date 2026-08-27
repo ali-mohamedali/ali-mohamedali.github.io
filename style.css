@@ -6,19 +6,15 @@
              font-display: swap;
   }
 
-  body {
-             background-color: #505075;
+  body {     padding: 0;
+             background-color: #222222;
 	     font-family: 'DejaVu Sans';
 	     text-indent: 5px; } 
-  #content { width: 60%;
-	     min-height: 30rem;
-	     float: right;
-	     margin: auto;
-	     margin-left: 0;
-	     margin-bottom: 2rem;
-	     margin-right: 5%;
+  #content { min-height: 30rem;
 	     background-color: #dddddd;
-	     padding: 2%; }
+	     padding: 2%;
+	     margin: 0;
+	     width: 70%; }
   .title  { text-align: center;
             margin-bottom: .2em;
 	    color: #8080b2; }
@@ -39,17 +35,16 @@
   .underline { text-decoration: underline; }
   #postamble, #preamble, .sidebar {
       font-size: 90%;
-      width: 20%;
       padding: 2%;
       background-color: #222222;
-      color: #b2b280;
-      float: left;
-      margin-bottom: 4px;
-      margin-right: 0;
-      margin-top: 0;
-      margin-left: 7%; }
+      color: #cfcfcf; }
+  #preamble {
+      float: right;
+      width: 20%; }
+  #postamble {
+      width: 70%; }
   #postamble a, #preamble a, .sidebar a {
-      color: #cfcfcf;
+      color: #b2b280;
       text-decoration: none; }
   p.verse { margin-left: 3%; }
   pre {
