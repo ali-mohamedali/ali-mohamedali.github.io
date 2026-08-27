@@ -211,4 +211,5 @@
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
-  img { width: 80%; }
+  img { width: auto;
+	scale: 0.8; }
