@@ -44,8 +44,7 @@
       width: 100%; }
   #postamble {
       width: 100%;
-      background-color: #343434;
-      color: black; }
+      background-color: #343434; }
   #postamble a, #preamble a, .sidebar a {
       color: #b2b280; }
   p.verse { margin-left: 3%; }

@@ -1,4 +1,4 @@
-  @font-face {
+@font-face {
   	     font-family: 'DejaVu Sans';
              src: url('./DejaVuSans.ttf') format('truetype');
              font-weight: normal;
@@ -44,8 +44,7 @@
       width: 20%; }
   #postamble {
       width: 70%;
-      background-color: #343434;
-      color: black; }
+      background-color: #343434; }
   #postamble a, #preamble a, .sidebar a {
       color: #b2b280;
       text-decoration: none; }
