@@ -214,3 +214,10 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
   img { max-width: 75%; }
+  details summary {
+      background-color: #8080b2;
+      color: #ffffff;
+  }
+  details {
+      border-bottom: 2px solid #bfbf80;
+  }
