@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-29 Sat 04:08 -->
+<!-- 2026-08-29 Sat 04:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading your mail inside GNU Emacs with GNus</title>
@@ -49,18 +49,18 @@ Navigation:
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5008943">1. ~/.emacs</a>
+<li><a href="#org287f93f">1. ~/.emacs</a>
 <ul>
-<li><a href="#orgd6eb85e">1.1. IMAP setup</a></li>
-<li><a href="#org2feb4bf">1.2. SMTP setup</a></li>
+<li><a href="#orgdb988de">1.1. IMAP setup</a></li>
+<li><a href="#orgd0838d3">1.2. SMTP setup</a></li>
 </ul>
 </li>
-<li><a href="#orge2cb9bf">2. ~/.authinfo and passwords</a>
+<li><a href="#orgeae5be7">2. ~/.authinfo and passwords</a>
 <ul>
-<li><a href="#org9556b79">2.1. What password to use?</a></li>
+<li><a href="#orgaa47673">2.1. What password to use?</a></li>
 </ul>
 </li>
-<li><a href="#org5eabca3">3. Trying it out</a></li>
+<li><a href="#org968aada">3. Trying it out</a></li>
 </ul>
 </div>
 </div>
@@ -93,12 +93,12 @@ For this example, we are going to be using IMAP to receive our emails,
 and send through SMTP.  We will not be downloading a complete log of
 all messages(POP3 format).
 </p>
-<div id="outline-container-org5008943" class="outline-2">
-<h2 id="org5008943"><span class="section-number-2">1.</span> ~/.emacs</h2>
+<div id="outline-container-org287f93f" class="outline-2">
+<h2 id="org287f93f"><span class="section-number-2">1.</span> ~/.emacs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgd6eb85e" class="outline-3">
-<h3 id="orgd6eb85e"><span class="section-number-3">1.1.</span> IMAP setup</h3>
+<div id="outline-container-orgdb988de" class="outline-3">
+<h3 id="orgdb988de"><span class="section-number-3">1.1.</span> IMAP setup</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(setq gnus-secondary-select-methods
@@ -156,8 +156,8 @@ way everything is included.
 </p>
 </div>
 </div>
-<div id="outline-container-org2feb4bf" class="outline-3">
-<h3 id="org2feb4bf"><span class="section-number-3">1.2.</span> SMTP setup</h3>
+<div id="outline-container-orgd0838d3" class="outline-3">
+<h3 id="orgd0838d3"><span class="section-number-3">1.2.</span> SMTP setup</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(setq smtpmail-smtp-server "smtp.gmail.com"
@@ -179,8 +179,8 @@ you will be prompted to choose from a list; Type smtp therein.</dd>
 </div>
 </div>
 </div>
-<div id="outline-container-orge2cb9bf" class="outline-2">
-<h2 id="orge2cb9bf"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
+<div id="outline-container-orgeae5be7" class="outline-2">
+<h2 id="orgeae5be7"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Passwords need to be specified in <code>~/.authinfo</code>.
@@ -206,8 +206,8 @@ machine smtp.gmail.com login user@gmail.com password &lt;app-password&gt; port 5
 </pre>
 </div>
 </div>
-<div id="outline-container-org9556b79" class="outline-3">
-<h3 id="org9556b79"><span class="section-number-3">2.1.</span> What password to use?</h3>
+<div id="outline-container-orgaa47673" class="outline-3">
+<h3 id="orgaa47673"><span class="section-number-3">2.1.</span> What password to use?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The password situation is a little strange.
@@ -252,8 +252,8 @@ the password fields in your .authinfo file.  That should work.
 </div>
 </div>
 </div>
-<div id="outline-container-org5eabca3" class="outline-2">
-<h2 id="org5eabca3"><span class="section-number-2">3.</span> Trying it out</h2>
+<div id="outline-container-org968aada" class="outline-2">
+<h2 id="org968aada"><span class="section-number-2">3.</span> Trying it out</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 &#x2026; Et voila!  It should work now.
@@ -295,7 +295,7 @@ as well.
 <div id="postamble" class="status">
 <div style="text-align: right;">
 <span class="author">Author: Ali Mohamed Ali <<a href="mailto:someguyshutup5@gmail.com">someguyshutup5@gmail.com</a>></span><br>
-<span class="date">Date: 2026-08-29 Sat 04:08</span><br>
+<span class="date">Date: 2026-08-29 Sat 04:31</span><br>
 <span class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</span><br>
 <span>License: CC-BY-SA 4.0</span><br>
 <span class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></span></div>
