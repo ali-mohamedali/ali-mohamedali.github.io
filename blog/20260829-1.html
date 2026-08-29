@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-08-29 Sat 04:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reading your mail inside GNU Emacs with GNus</title>
+<meta name="author" content="Ali Mohamed Ali" />
+<meta name="description" content="How I was able to make Emacs' gnus-mode as my preferred mail client, as well as some short instructions on a certain way to do it." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/style.css"/>
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/mobile.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div>
+<center>Ali Mohamed Ali</center>
+<hr>
+Navigation:
+<ul>
+  <li>
+    <a href="/index.html">Home</a>
+  </li>
+  <li>
+    Text-based browsers: <a href="#content">Jump to content</a></li>
+  <li>
+    <a href="/about.html">About me</a>
+  </li>
+  <li>
+    <a href="/blog.html">Blog</a>
+  </li>
+</ul>
+<hr>
+<a href="/atom.xml">Atom/RSS feed link</a>
+<hr>
+<details><summary>Posts by tag</summary><p style="margin:2px;">
+<a href="/tag/art.html">art (1)</a>|<a href="/tag/doodle.html">doodle (1)</a>|<a href="/tag/emacs.html">emacs (1)</a>|<a href="/tag/email.html">email (1)</a>|<a href="/tag/gnu.html">gnu (2)</a>|<a href="/tag/image.html">image (1)</a>|<a href="/tag/meta.html">meta (1)</a>|<a href="/tag/tech.html">tech (3)</a>|<a href="/tag/test.html">test (2)</a>|<a href="/tag/time.html">time (1)</a>|<a href="/tag/web.html">web (1)</a>
+</p></details>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Reading your mail inside GNU Emacs with GNus
+<br />
+<span class="subtitle">&lt;2026-08-29T02:58:49:00+03:00&gt; :<a href="/tag/gnu">gnu</a>:<a href="/tag/tech">tech</a>:<a href="/tag/email">email</a>:<a href="/tag/emacs">emacs</a>:</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9708aa7">1. ~/.emacs</a>
+<ul>
+<li><a href="#org6ca36bf">1.1. IMAP setup</a></li>
+<li><a href="#org1cdf5b1">1.2. SMTP setup</a></li>
+</ul>
+</li>
+<li><a href="#org4646a62">2. ~/.authinfo and passwords</a>
+<ul>
+<li><a href="#org4dbfeb9">2.1. What password to use?</a></li>
+</ul>
+</li>
+<li><a href="#org5384c60">3. Trying it out</a></li>
+</ul>
+</div>
+</div>
+<p>
+Emacs is a wonderful editor which can handle many tasks related to
+text.  It can play games, it can write you code, manage version
+control, help you read your system documentation, view images under a
+GUI, read webpages, etc.  It is also known to be able to let you read
+Newsgroups and E-mail.
+</p>
+
+<p>
+Today, I set up(again) my email inboxes in emacs.  I figured it was
+worth documenting.
+</p>
+
+<p>
+Most people nowadays use GMail, as gmail is a leading service in
+emails, and google accounts are easy to make and very useful,
+providing access to many platforms.
+</p>
+
+<p>
+In Emacs, the method to read mail can be through the builtin Gnus
+feature, which lets you read mail like newsgroups.
+</p>
+
+<p>
+For this example, we are going to be using IMAP to receive our emails,
+and send through SMTP.  We will not be downloading a complete log of
+all messages(POP3 format).
+</p>
+<div id="outline-container-org9708aa7" class="outline-2">
+<h2 id="org9708aa7"><span class="section-number-2">1.</span> ~/.emacs</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org6ca36bf" class="outline-3">
+<h3 id="org6ca36bf"><span class="section-number-3">1.1.</span> IMAP setup</h3>
+<div class="outline-text-3" id="text-1-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq gnus-secondary-select-methods
+        '((nnimap "gmail"
+                (nnimap-address "imap.gmail.com")
+                (nnimap-server-port "imaps")
+                (nnimap-stream ssl)
+                (nnmail-expiry-target "nnimap+gmail:[Gmail]/Trash")
+                (nnmail-expiry-wait immediate)))
+        gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\"]\"[#'()]")  
+</pre>
+</div>
+
+<p>
+You could either set gnus-secondary-select-methods to include this, or
+if you only want Gnus to read your emails, do the same, except
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(setq gnus-select-method
+      '(nnimap "gmail"
+               (nnimap-address "imap.gmail.com")
+               (nnimap-server-port "imaps")
+               (nnimap-stream-ssl)
+               (nnmail-expiry-target "nnimap+gmail:[Gmail]/Trash")
+               (nnmail-expiry-wait immediate))
+      gnus-ignored-newsgroups "...") ;; note you should use the string
+;; from the last code block
+</pre>
+</div>
+
+<p>
+In essence, the IMAP select method is supported by Gnus.  Here, we're
+specifying GMail's specific requirements to connect:
+</p>
+<dl class="org-dl">
+<dt><code>nnimap-address</code></dt><dd>IMAP connections go to either imap.gmail.com or
+imap.googlemail.com, depending on what lands after the @ in your
+email address (e.g. user@ <b><b>gmail</b></b> .com)</dd>
+<dt><code>nnimap-server-port</code></dt><dd>IMAP connects for Gmail must connect through
+imaps(993).  This is like https, or ftps, or other secured
+connections, which is that a security layer involving SSL/TLS must
+be used.  Hence, <code>nnimap-server-port</code>, and <code>nnimap-stream-ssl</code> were
+specified.</dd>
+<dt><code>nnmail-expiry-target</code></dt><dd>simply specifies where read mails should
+go.  If you would like them to not expire in the trash, and remain
+in their specific directories, you can omit this.  If you do want
+them to expire there, include <code>nnmail-expiry-wait</code></dd>
+</dl>
+
+<p>
+The last set for the variable <code>gnus-ignored-newsgroups</code> is a failsafe to
+make sure gnus doesn't ignore certain directories in your email.  This
+way everything is included.
+</p>
+</div>
+</div>
+<div id="outline-container-org1cdf5b1" class="outline-3">
+<h3 id="org1cdf5b1"><span class="section-number-3">1.2.</span> SMTP setup</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+<pre class="src src-elisp">(setq smtpmail-smtp-server "smtp.gmail.com"
+    smtpmail-smtp-service 587
+    send-mail-function 'smtpmail-send-it)
+</pre>
+</div>
+
+<dl class="org-dl">
+<dt>smtpmail-smtp-server</dt><dd>sets the specific recipient server for
+outgoing smtp messages.  Gmail receives them at smtp.gmail.com.  I
+don't know if there is an smtp.googlemail.com</dd>
+<dt>smtpmail-smtp-service</dt><dd>the specific port that gmail needs which
+is 587 for smtp messages.</dd>
+<dt>send-mail-function</dt><dd>this line ensures that the default outgoing
+email message takes the protocol of smtp.  If you don't set this,
+you will be prompted to choose from a list; Type smtp therein.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org4646a62" class="outline-2">
+<h2 id="org4646a62"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Passwords need to be specified in <code>~/.authinfo</code>.
+</p>
+
+<p>
+If you are like me, and don't enjoy copy-pasting mindlessly, you can
+view the language specification of .authinfo in the manpage for <code>netrc</code>.
+</p>
+
+<p>
+In this scheme, we are connecting in two places: Gmail's IMAP server,
+and gmail's SMTP server.  One server to receive messages, and the
+other to send.  It is not one server we simply connect to.
+</p>
+
+<p>
+We should write this:
+</p>
+<div class="org-src-container">
+<pre class="src src-nil">machine imap.gmail.com login user@gmail.com password &lt;app-password&gt; port 993
+machine smtp.gmail.com login user@gmail.com password &lt;app-password&gt; port 587
+</pre>
+</div>
+</div>
+<div id="outline-container-org4dbfeb9" class="outline-3">
+<h3 id="org4dbfeb9"><span class="section-number-3">2.1.</span> What password to use?</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The password situation is a little strange.
+</p>
+
+<p>
+As of the time of writing, GMail simply refuses to let third-party
+apps which they don't like to log into email accounts using their pure
+address+password.
+</p>
+
+<p>
+The workaround at that point was to jump into the Google Cloud, create
+a faux project, and then administer a GMail API, add your address to
+it, then create an API key, authorise it for your app and address as
+if you were installing an app that did this alone, and use the API key
+as the password.  This API key would provide authorisation through
+OAuth2.  However, neither this works.
+</p>
+
+<p>
+The current solution is little known, however Google still allows you
+to create 'app-passwords' which are write-only passwords you copy into
+an app once, and never again, and which provide complete access to
+your google account.  This app password will prevent (1) the error
+from imap.gmail.com complaining this app is insecure, and (2) the
+error from imap.gmail.com complaining your <i>valid api keys you created
+and authorised</i> are invalid credentials.  Google themselves say this
+is only needed for a few apps, and I guess for now GNU Emacs is one of
+those apps.
+</p>
+
+<p>
+If you want to find out how you can create an app password for
+yourself, you can do so <a href="https://support.google.com/accounts/answer/185833?hl=en">at their official guide for this</a>.
+</p>
+
+<p>
+When you get the password, write it down(without spaces) in both of
+the password fields in your .authinfo file.  That should work.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5384c60" class="outline-2">
+<h2 id="org5384c60"><span class="section-number-2">3.</span> Trying it out</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+&#x2026; Et voila!  It should work now.
+</p>
+
+<p>
+When you have saved these files, you should do <code>M-x load-file RET
+~/.emacs RET</code> (or just restart your emacs)
+</p>
+
+<p>
+When you are ready, type <code>M-x gnus RET</code>
+</p>
+
+<p>
+You'll see the wildebeest/bull icon.  This means it's loading.  When
+it finishes loading, you'll see a few inboxes with unread messages in
+them.  You can look at inboxes with no new messages in them with <code>L</code>
+</p>
+
+<p>
+If you would like to see all messages, say, in the inbox, then you
+should type <code>/ o</code> which will reveal messages which are read.
+</p>
+
+<p>
+When you quit, type <code>q</code> and <i>confirm your desire to escape Gnus</i> (lol).
+</p>
+
+<p>
+From there you should be able to remember more commands needed to
+operate in Gnus.  The commands which work in a newsgroup will also
+work here in your emails, because Gnus sees the folders as newsgroups
+as well.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div style="text-align: right;">
+<span class="author">Author: Ali Mohamed Ali <<a href="mailto:someguyshutup5@gmail.com">someguyshutup5@gmail.com</a>></span><br>
+<span class="date">Date: 2026-08-29 Sat 04:04</span><br>
+<span class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.2 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</span><br>
+<span>License: CC-BY-SA 4.0</span><br>
+<span class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></span></div>
+</div>
+</body>
+</html>
