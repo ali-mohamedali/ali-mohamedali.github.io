@@ -39,6 +39,9 @@
       padding: 2%;
       background-color: #222222;
       color: #cfcfcf; }
+  #preamble ul {
+      margin: 0;
+  }
   #preamble {
       float: right;
       width: 20%; }
@@ -220,8 +223,4 @@
   }
   details {
       border-bottom: 2px solid #bfbf80;
-  }
-  ul {
-      margin-top: 0.3em;
-      margin-top: 0.3em;
   }

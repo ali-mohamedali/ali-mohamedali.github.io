@@ -44,6 +44,8 @@
       width: auto; }
   #preamble {
       float: none; }
+  #preamble ul {
+      margin: 0; }
   #postamble {
       background-color: #343434; }
   #postamble a, #preamble a, .sidebar a {
