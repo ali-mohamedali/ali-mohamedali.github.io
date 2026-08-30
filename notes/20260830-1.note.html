@@ -70,10 +70,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5a39df2">1. Sleep</a>
+<li><a href="#orgf31e1f5">1. Sleep</a>
 <ul>
-<li><a href="#org23155d8">1.1. Preventing sleep altogether</a></li>
-<li><a href="#org602198e">1.2. Preventing sleep on the close of a lid</a></li>
+<li><a href="#orgb5a19d6">1.1. Preventing sleep altogether</a></li>
+<li><a href="#org88bf766">1.2. Preventing sleep on the close of a lid</a></li>
 </ul>
 </li>
 </ul>
@@ -96,8 +96,8 @@ keep dust away.
 <p>
 It's quite easy to do.
 </p>
-<div id="outline-container-org5a39df2" class="outline-2">
-<h2 id="org5a39df2"><span class="section-number-2">1.</span> Sleep</h2>
+<div id="outline-container-orgf31e1f5" class="outline-2">
+<h2 id="orgf31e1f5"><span class="section-number-2">1.</span> Sleep</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You should follow any of the edit in the following sections, then
@@ -133,15 +133,15 @@ If you are using OpenRC:
 </pre>
 </div>
 </div>
-<div id="outline-container-org23155d8" class="outline-3">
-<h3 id="org23155d8"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
+<div id="outline-container-orgb5a19d6" class="outline-3">
+<h3 id="orgb5a19d6"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 The easiest way to prevent sleep is to edit <code>/etc/elogind/sleep.conf</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="org324f3b7">[Sleep]
+<pre class="src src-nil" id="org01783dd">[Sleep]
 AllowSleep=no
 </pre>
 </div>
@@ -153,8 +153,8 @@ name of the file can be anything, but it must be in
 </p>
 </div>
 </div>
-<div id="outline-container-org602198e" class="outline-3">
-<h3 id="org602198e"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
+<div id="outline-container-org88bf766" class="outline-3">
+<h3 id="org88bf766"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Alternatively, you can write under <code>[Login]</code> in
@@ -162,7 +162,7 @@ Alternatively, you can write under <code>[Login]</code> in
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="orgb41d638">[Login]
+<pre class="src src-nil" id="orgfd5c26d">[Login]
 LidSwitchIgnoreInhibited=no
 </pre>
 </div>

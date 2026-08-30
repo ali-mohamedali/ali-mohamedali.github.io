@@ -10,8 +10,7 @@
 	     margin: auto;
 	     max-width: 64em;
              background-color: #222222;
-	     font-family: 'DejaVu Sans';
-	     text-indent: 5px; } 
+	     font-family: 'DejaVu Sans'; } 
   #content { min-height: 30rem;
 	     background-color: #dddddd;
 	     padding: 2%;
@@ -221,4 +220,8 @@
   }
   details {
       border-bottom: 2px solid #bfbf80;
+  }
+  ul {
+      margin-top: 0.3em;
+      margin-top: 0.3em;
   }
