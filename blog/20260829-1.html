@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-31 Mon 00:04 -->
+<!-- 2026-08-31 Mon 00:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading your mail inside GNU Emacs with GNus</title>
@@ -68,6 +68,7 @@
   <li>
     <a href="/atom.xml">Atom/RSS feed link</a></li>
 </ul>
+<br>
 <details><summary>Posts by tag</summary><p style="margin:2px;">
  <a href="/tag/art.html">art (1)</a> | <a href="/tag/doodle.html">doodle (1)</a> | <a href="/tag/elogind.html">elogind (1)</a> | <a href="/tag/emacs.html">emacs (1)</a> | <a href="/tag/email.html">email (1)</a> | <a href="/tag/gnu.html">gnu (2)</a> | <a href="/tag/image.html">image (1)</a> | <a href="/tag/linux.html">linux (1)</a> | <a href="/tag/meta.html">meta (1)</a> | <a href="/tag/tech.html">tech (4)</a> | <a href="/tag/test.html">test (2)</a> | <a href="/tag/time.html">time (1)</a> | <a href="/tag/web.html">web (1)</a> 
 </p></details>
@@ -82,18 +83,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org16bd850">1. ~/.emacs</a>
+<li><a href="#org3dc7cec">1. ~/.emacs</a>
 <ul>
-<li><a href="#org2c8bdef">1.1. IMAP setup</a></li>
-<li><a href="#org3828a0a">1.2. SMTP setup</a></li>
+<li><a href="#org6a9d211">1.1. IMAP setup</a></li>
+<li><a href="#org6615478">1.2. SMTP setup</a></li>
 </ul>
 </li>
-<li><a href="#org03ce54e">2. ~/.authinfo and passwords</a>
+<li><a href="#org74fee9b">2. ~/.authinfo and passwords</a>
 <ul>
-<li><a href="#orgac4a628">2.1. What password to use?</a></li>
+<li><a href="#org163cfa7">2.1. What password to use?</a></li>
 </ul>
 </li>
-<li><a href="#org7562737">3. Trying it out</a></li>
+<li><a href="#orgbd4f5ef">3. Trying it out</a></li>
 </ul>
 </div>
 </div>
@@ -126,12 +127,12 @@ For this example, we are going to be using IMAP to receive our emails,
 and send through SMTP.  We will not be downloading a complete log of
 all messages(POP3 format).
 </p>
-<div id="outline-container-org16bd850" class="outline-2">
-<h2 id="org16bd850"><span class="section-number-2">1.</span> ~/.emacs</h2>
+<div id="outline-container-org3dc7cec" class="outline-2">
+<h2 id="org3dc7cec"><span class="section-number-2">1.</span> ~/.emacs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org2c8bdef" class="outline-3">
-<h3 id="org2c8bdef"><span class="section-number-3">1.1.</span> IMAP setup</h3>
+<div id="outline-container-org6a9d211" class="outline-3">
+<h3 id="org6a9d211"><span class="section-number-3">1.1.</span> IMAP setup</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(setq gnus-secondary-select-methods
@@ -189,8 +190,8 @@ way everything is included.
 </p>
 </div>
 </div>
-<div id="outline-container-org3828a0a" class="outline-3">
-<h3 id="org3828a0a"><span class="section-number-3">1.2.</span> SMTP setup</h3>
+<div id="outline-container-org6615478" class="outline-3">
+<h3 id="org6615478"><span class="section-number-3">1.2.</span> SMTP setup</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(setq smtpmail-smtp-server "smtp.gmail.com"
@@ -212,8 +213,8 @@ you will be prompted to choose from a list; Type smtp therein.</dd>
 </div>
 </div>
 </div>
-<div id="outline-container-org03ce54e" class="outline-2">
-<h2 id="org03ce54e"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
+<div id="outline-container-org74fee9b" class="outline-2">
+<h2 id="org74fee9b"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Passwords need to be specified in <code>~/.authinfo</code>.
@@ -239,8 +240,8 @@ machine smtp.gmail.com login user@gmail.com password &lt;app-password&gt; port 5
 </pre>
 </div>
 </div>
-<div id="outline-container-orgac4a628" class="outline-3">
-<h3 id="orgac4a628"><span class="section-number-3">2.1.</span> What password to use?</h3>
+<div id="outline-container-org163cfa7" class="outline-3">
+<h3 id="org163cfa7"><span class="section-number-3">2.1.</span> What password to use?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The password situation is a little strange.
@@ -285,8 +286,8 @@ the password fields in your .authinfo file.  That should work.
 </div>
 </div>
 </div>
-<div id="outline-container-org7562737" class="outline-2">
-<h2 id="org7562737"><span class="section-number-2">3.</span> Trying it out</h2>
+<div id="outline-container-orgbd4f5ef" class="outline-2">
+<h2 id="orgbd4f5ef"><span class="section-number-2">3.</span> Trying it out</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 &#x2026; Et voila!  It should work now.
