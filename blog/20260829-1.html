@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-30 Sun 21:30 -->
+<!-- 2026-08-30 Sun 22:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading your mail inside GNU Emacs with GNus</title>
@@ -35,11 +35,8 @@
 <ul>
   <li>
     Text-based browsers: <a href="#content">Jump to content</a></li>
-  <li>
-    <a onclick="setRegularStyle()">View in regular style</a></li>
-  <li>
-    <a onclick="setBasicStyle()">View in basic style</a></li>
 </ul>
+<hr>
 <ul>
   <li>
     <a href="/index.html">Home</a>
@@ -48,6 +45,7 @@
     <a href="/about.html">About me</a>
   </li>
 </ul>
+<hr>
 <ul>
   <li>
     <a href="/blog.html">Blog</a></li>
@@ -55,7 +53,17 @@
     <a href="/notes/index.html">Notes</a></li>
 </ul>
 <hr>
-<a href="/atom.xml">Atom/RSS feed link</a>
+<ul>
+  <li>
+    <a href="" onclick="setRegularStyle()">View in regular style</a></li>
+  <li>
+    <a href="" onclick="setBasicStyle()">View in basic style</a></li>
+</ul>
+<hr>
+<ul>
+  <li>
+    <a href="/atom.xml">Atom/RSS feed link</a></li>
+</ul>
 <hr>
 <details><summary>Posts by tag</summary><p style="margin:2px;">
 <a href="/tag/art.html">art (1)</a> <a href="/tag/doodle.html">doodle (1)</a> <a href="/tag/elogind.html">elogind (1)</a> <a href="/tag/emacs.html">emacs (1)</a> <a href="/tag/email.html">email (1)</a> <a href="/tag/gnu.html">gnu (2)</a> <a href="/tag/image.html">image (1)</a> <a href="/tag/linux.html">linux (1)</a> <a href="/tag/meta.html">meta (1)</a> <a href="/tag/tech.html">tech (4)</a> <a href="/tag/test.html">test (2)</a> <a href="/tag/time.html">time (1)</a> <a href="/tag/web.html">web (1)</a> </p></details>
@@ -70,18 +78,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9676c96">1. ~/.emacs</a>
+<li><a href="#orgd1f8b8c">1. ~/.emacs</a>
 <ul>
-<li><a href="#org8c55135">1.1. IMAP setup</a></li>
-<li><a href="#org99a6a50">1.2. SMTP setup</a></li>
+<li><a href="#orgab9b361">1.1. IMAP setup</a></li>
+<li><a href="#org3fa8c61">1.2. SMTP setup</a></li>
 </ul>
 </li>
-<li><a href="#orgd873c8e">2. ~/.authinfo and passwords</a>
+<li><a href="#org573f2ae">2. ~/.authinfo and passwords</a>
 <ul>
-<li><a href="#org58dc3a4">2.1. What password to use?</a></li>
+<li><a href="#org0e8bc1c">2.1. What password to use?</a></li>
 </ul>
 </li>
-<li><a href="#orgd71d855">3. Trying it out</a></li>
+<li><a href="#orgfab2e42">3. Trying it out</a></li>
 </ul>
 </div>
 </div>
@@ -114,12 +122,12 @@ For this example, we are going to be using IMAP to receive our emails,
 and send through SMTP.  We will not be downloading a complete log of
 all messages(POP3 format).
 </p>
-<div id="outline-container-org9676c96" class="outline-2">
-<h2 id="org9676c96"><span class="section-number-2">1.</span> ~/.emacs</h2>
+<div id="outline-container-orgd1f8b8c" class="outline-2">
+<h2 id="orgd1f8b8c"><span class="section-number-2">1.</span> ~/.emacs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org8c55135" class="outline-3">
-<h3 id="org8c55135"><span class="section-number-3">1.1.</span> IMAP setup</h3>
+<div id="outline-container-orgab9b361" class="outline-3">
+<h3 id="orgab9b361"><span class="section-number-3">1.1.</span> IMAP setup</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(setq gnus-secondary-select-methods
@@ -177,8 +185,8 @@ way everything is included.
 </p>
 </div>
 </div>
-<div id="outline-container-org99a6a50" class="outline-3">
-<h3 id="org99a6a50"><span class="section-number-3">1.2.</span> SMTP setup</h3>
+<div id="outline-container-org3fa8c61" class="outline-3">
+<h3 id="org3fa8c61"><span class="section-number-3">1.2.</span> SMTP setup</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(setq smtpmail-smtp-server "smtp.gmail.com"
@@ -200,8 +208,8 @@ you will be prompted to choose from a list; Type smtp therein.</dd>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd873c8e" class="outline-2">
-<h2 id="orgd873c8e"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
+<div id="outline-container-org573f2ae" class="outline-2">
+<h2 id="org573f2ae"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Passwords need to be specified in <code>~/.authinfo</code>.
@@ -227,8 +235,8 @@ machine smtp.gmail.com login user@gmail.com password &lt;app-password&gt; port 5
 </pre>
 </div>
 </div>
-<div id="outline-container-org58dc3a4" class="outline-3">
-<h3 id="org58dc3a4"><span class="section-number-3">2.1.</span> What password to use?</h3>
+<div id="outline-container-org0e8bc1c" class="outline-3">
+<h3 id="org0e8bc1c"><span class="section-number-3">2.1.</span> What password to use?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The password situation is a little strange.
@@ -273,8 +281,8 @@ the password fields in your .authinfo file.  That should work.
 </div>
 </div>
 </div>
-<div id="outline-container-orgd71d855" class="outline-2">
-<h2 id="orgd71d855"><span class="section-number-2">3.</span> Trying it out</h2>
+<div id="outline-container-orgfab2e42" class="outline-2">
+<h2 id="orgfab2e42"><span class="section-number-2">3.</span> Trying it out</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 &#x2026; Et voila!  It should work now.

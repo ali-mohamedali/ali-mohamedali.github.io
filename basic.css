@@ -4,6 +4,7 @@
 	margin: auto;
         color: #2c2c2c;
         background-color: #d4d4d4;
+	overflow: scroll;
       }
       .org-abbrev-table-name {
         /* abbrev-table-name */
@@ -1866,15 +1867,11 @@
         /* window-divider-last-pixel */
         color: #666666;
       }
-
+      img { max-width: 75%; }
       a {
-        color: inherit;
-        background-color: inherit;
-        font: inherit;
-        text-decoration: inherit;
-      }
-      a:hover {
-        text-decoration: underline;
+        color: blue;
+        background-color: #cccccc;
+     	text-decoration: underline;
       }
       ul {
 	  margin-top: 0.3em;
