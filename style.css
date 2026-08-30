@@ -40,7 +40,12 @@
       background-color: #222222;
       color: #cfcfcf; }
   #preamble ul {
+      padding-left: 1.2em;
+      list-marker-type: none;
       margin: 0;
+  }
+  #preamble ul li::before {
+      content: "-";
   }
   #preamble {
       float: right;

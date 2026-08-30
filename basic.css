@@ -6,6 +6,12 @@
         background-color: #d4d4d4;
 	overflow: scroll;
       }
+      #preamble ul {
+	  padding-left: 1.2em;
+	  list-marker-type: none;
+	  margin: 0; }
+      #preamble ul li::before {
+	  content: "-"; }
       .org-abbrev-table-name {
         /* abbrev-table-name */
         color: #0000ff;
