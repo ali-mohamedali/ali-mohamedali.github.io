@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2026-08-30 Sun 19:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modifying sleep behaviour on linux with elogind</title>
+<meta name="author" content="Ali Mohamed Ali" />
+<meta name="description" content="Describing how to manipulate sleep behaviour on linux." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/style.css"/>
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="/mobile.css"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div>
+<center>Ali Mohamed Ali</center>
+<hr>
+Navigation:
+<ul>
+  <li>
+    <a href="/index.html">Home</a>
+  </li>
+  <li>
+    Text-based browsers: <a href="#content">Jump to content</a></li>
+  <li>
+    <a href="/about.html">About me</a>
+  </li>
+  <li>
+    <a href="/blog.html">Blog</a>
+  </li>
+</ul>
+<hr>
+<a href="/atom.xml">Atom/RSS feed link</a>
+<hr>
+<details><summary>Posts by tag</summary><p style="margin:2px;">
+<a href="/tag/art.html">art (1)</a>|<a href="/tag/doodle.html">doodle (1)</a>|<a href="/tag/elogind.html">elogind (1)</a>|<a href="/tag/emacs.html">emacs (1)</a>|<a href="/tag/email.html">email (1)</a>|<a href="/tag/gnu.html">gnu (2)</a>|<a href="/tag/image.html">image (1)</a>|<a href="/tag/linux.html">linux (1)</a>|<a href="/tag/meta.html">meta (1)</a>|<a href="/tag/tech.html">tech (4)</a>|<a href="/tag/test.html">test (2)</a>|<a href="/tag/time.html">time (1)</a>|<a href="/tag/web.html">web (1)</a>
+</p></details>
+</div>
+</div>
+<div id="content" class="content">
+<h1 class="title">Modifying sleep behaviour on linux with elogind
+<br />
+<span class="subtitle">&lt;2026-08-30T19:06:34:00+03:00&gt; :<a href="/tag/linux">linux</a>:<a href="/tag/tech">tech</a>:<a href="/tag/elogind">elogind</a>:</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org910e78b">1. Sleep</a>
+<ul>
+<li><a href="#orgbc52b9d">1.1. Preventing sleep altogether</a></li>
+<li><a href="#org2f0384b">1.2. Preventing sleep on the close of a lid</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+On most linux systems, elogind is responsible for sleeping and
+hibernation.  In this article, I'll explain how to stop a device from
+sleeping, both on the closing of a lid, or even in general.
+</p>
+
+<p>
+This is quite useful for when you are making a device run something
+for a long time, and want to always be able to look at the screen.
+On laptops, this is useful if you want to make sure that your
+daemons/scripts are always running even when you close the switch to
+keep dust away.
+</p>
+
+<p>
+It's quite easy to do.
+</p>
+<div id="outline-container-org910e78b" class="outline-2">
+<h2 id="org910e78b"><span class="section-number-2">1.</span> Sleep</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+You should follow any of the edit in the following sections, then
+restart elogind in your init system.
+</p>
+
+<p>
+If you are using SystemD(Arch, Ubuntu, Debian, many others), you
+should write the following line in a root shell after you have edited
+the configuration file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil"># systemctl restart elogind
+</pre>
+</div>
+
+<p>
+If you are using SysV:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil"># /etc/rc.d/rc.elogind restart
+</pre>
+</div>
+
+<p>
+If you are using OpenRC:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil"># rc-service elogind restart
+</pre>
+</div>
+</div>
+<div id="outline-container-orgbc52b9d" class="outline-3">
+<h3 id="orgbc52b9d"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The easiest way to prevent sleep is to edit <code>/etc/elogind/sleep.conf</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil" id="org80dc0f6">[Sleep]
+AllowSleep=no
+</pre>
+</div>
+
+<p>
+You can also put this in <code>/etc/elogind/sleep.conf.d/temporary</code> (the
+name of the file can be anything, but it must be in
+<code>/etc/elogind/sleep.conf.d/</code>.
+</p>
+</div>
+</div>
+<div id="outline-container-org2f0384b" class="outline-3">
+<h3 id="org2f0384b"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Alternatively, you can write under <code>[Login]</code> in
+<code>/etc/elogind/login.conf</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil" id="org577350f">[Login]
+LidSwitchIgnoreInhibited=no
+</pre>
+</div>
+
+<p>
+Which will ignore the lid switch event in any case.  This prevents the
+default <code>HandleLidSwitch=suspend</code> from actually being enforced.
+</p>
+
+<p>
+Alternatively, you can write the following, which provides
+approximately the same effect.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nil">[Login]
+HandleLidSwitch=ignore
+</pre>
+</div>
+
+<p>
+As with the other, you can put these edits in a file in
+<code>/etc/elogind/login.conf.d/</code> and make sure there is a line <code>[Login]</code>
+at the start of the file.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div style="text-align: right;">
+<span class="author">Authored by Ali Mohamed Ali <<a href="mailto:someguyshutup5@gmail.com">someguyshutup5@gmail.com</a>></span><br>
+<span>Licensed under CC-BY-SA 4.0 (except where noted otherwise)</span><br>
+<span><a href="">Refresh this page!</a></span></div>
+</div>
+</body>
+</html>

@@ -9,6 +9,15 @@
   <id>aba27805-8377-4370-8bc9-7d1ac2ef7771</id>
 
   <entry>
+    <link href="http://ali-mohamedali.github.io/blog/20260830-1.html"/>
+    <title>Modifying sleep behaviour on linux with elogind</title>
+    <updated>2026-08-30T19:06:34:00+03:00</updated>
+    <id>2026-08-30T19:06:34:00+03:00</id>
+    <summary>
+Describing how to manipulate sleep behaviour on linux.
+    </summary>
+  </entry>
+  <entry>
     <link href="http://ali-mohamedali.github.io/blog/20260829-1.html"/>
     <title>Reading your mail inside GNU Emacs with GNus</title>
     <updated>2026-08-29T02:58:49:00+03:00</updated>
