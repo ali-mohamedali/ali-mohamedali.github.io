@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-30 Sun 23:42 -->
+<!-- 2026-08-31 Mon 00:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modifying sleep behaviour on linux with elogind</title>
@@ -36,6 +36,7 @@
     Text-based browsers: <a href="#content">Jump to content</a></li>
 </ul>
 <hr>
+<center>Main</center>
 <ul>
   <li>
     <a href="/index.html">Home</a>
@@ -45,6 +46,7 @@
   </li>
 </ul>
 <hr>
+<center>Lists</center>
 <ul>
   <li>
     <a href="/blog.html">Blog</a></li>
@@ -52,6 +54,7 @@
     <a href="/notes/index.html">Notes</a></li>
 </ul>
 <hr>
+<center>Options</center>
 <ul>
   <li>
     <a onclick="setRegularStyle()">View in regular style</a></li>
@@ -59,11 +62,11 @@
     <a onclick="setBasicStyle()">View in basic style</a></li>
 </ul>
 <hr>
+<center>Misc.</center>
 <ul>
   <li>
     <a href="/atom.xml">Atom/RSS feed link</a></li>
 </ul>
-<hr>
 <details><summary>Posts by tag</summary><p style="margin:2px;">
  <a href="/tag/art.html">art (1)</a> | <a href="/tag/doodle.html">doodle (1)</a> | <a href="/tag/elogind.html">elogind (1)</a> | <a href="/tag/emacs.html">emacs (1)</a> | <a href="/tag/email.html">email (1)</a> | <a href="/tag/gnu.html">gnu (2)</a> | <a href="/tag/image.html">image (1)</a> | <a href="/tag/linux.html">linux (1)</a> | <a href="/tag/meta.html">meta (1)</a> | <a href="/tag/tech.html">tech (4)</a> | <a href="/tag/test.html">test (2)</a> | <a href="/tag/time.html">time (1)</a> | <a href="/tag/web.html">web (1)</a> 
 </p></details>
@@ -75,10 +78,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6d6d793">1. Sleep</a>
+<li><a href="#orga3a61b7">1. Sleep</a>
 <ul>
-<li><a href="#orgc1a8954">1.1. Preventing sleep altogether</a></li>
-<li><a href="#orga311b3f">1.2. Preventing sleep on the close of a lid</a></li>
+<li><a href="#orgb6de9bf">1.1. Preventing sleep altogether</a></li>
+<li><a href="#orgcd7b3ff">1.2. Preventing sleep on the close of a lid</a></li>
 </ul>
 </li>
 </ul>
@@ -101,8 +104,8 @@ keep dust away.
 <p>
 It's quite easy to do.
 </p>
-<div id="outline-container-org6d6d793" class="outline-2">
-<h2 id="org6d6d793"><span class="section-number-2">1.</span> Sleep</h2>
+<div id="outline-container-orga3a61b7" class="outline-2">
+<h2 id="orga3a61b7"><span class="section-number-2">1.</span> Sleep</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You should follow any of the edit in the following sections, then
@@ -138,15 +141,15 @@ If you are using OpenRC:
 </pre>
 </div>
 </div>
-<div id="outline-container-orgc1a8954" class="outline-3">
-<h3 id="orgc1a8954"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
+<div id="outline-container-orgb6de9bf" class="outline-3">
+<h3 id="orgb6de9bf"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 The easiest way to prevent sleep is to edit <code>/etc/elogind/sleep.conf</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="org27380f6">[Sleep]
+<pre class="src src-nil" id="org90dcecf">[Sleep]
 AllowSleep=no
 </pre>
 </div>
@@ -158,8 +161,8 @@ name of the file can be anything, but it must be in
 </p>
 </div>
 </div>
-<div id="outline-container-orga311b3f" class="outline-3">
-<h3 id="orga311b3f"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
+<div id="outline-container-orgcd7b3ff" class="outline-3">
+<h3 id="orgcd7b3ff"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Alternatively, you can write under <code>[Login]</code> in
@@ -167,7 +170,7 @@ Alternatively, you can write under <code>[Login]</code> in
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="org0616701">[Login]
+<pre class="src src-nil" id="org90e397a">[Login]
 LidSwitchIgnoreInhibited=no
 </pre>
 </div>
