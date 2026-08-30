@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-31 Mon 00:10 -->
+<!-- 2026-08-31 Mon 00:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modifying sleep behaviour on linux with elogind</title>
@@ -40,15 +40,9 @@
 <center>Main</center>
 <ul>
   <li>
-    <a href="/index.html">Home</a>
-  </li>
+    <a href="/index.html">Home</a></li>
   <li>
-    <a href="/about.html">About me</a>
-  </li>
-</ul>
-<hr>
-<center>Lists</center>
-<ul>
+    <a href="/about.html">About me</a></li>
   <li>
     <a href="/blog.html">Blog</a></li>
   <li>
@@ -83,10 +77,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbf65c22">1. Sleep</a>
+<li><a href="#org0fba3a3">1. Sleep</a>
 <ul>
-<li><a href="#org4d971d7">1.1. Preventing sleep altogether</a></li>
-<li><a href="#orgca5671e">1.2. Preventing sleep on the close of a lid</a></li>
+<li><a href="#orga14d012">1.1. Preventing sleep altogether</a></li>
+<li><a href="#orgc9c6216">1.2. Preventing sleep on the close of a lid</a></li>
 </ul>
 </li>
 </ul>
@@ -109,8 +103,8 @@ keep dust away.
 <p>
 It's quite easy to do.
 </p>
-<div id="outline-container-orgbf65c22" class="outline-2">
-<h2 id="orgbf65c22"><span class="section-number-2">1.</span> Sleep</h2>
+<div id="outline-container-org0fba3a3" class="outline-2">
+<h2 id="org0fba3a3"><span class="section-number-2">1.</span> Sleep</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You should follow any of the edit in the following sections, then
@@ -146,15 +140,15 @@ If you are using OpenRC:
 </pre>
 </div>
 </div>
-<div id="outline-container-org4d971d7" class="outline-3">
-<h3 id="org4d971d7"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
+<div id="outline-container-orga14d012" class="outline-3">
+<h3 id="orga14d012"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 The easiest way to prevent sleep is to edit <code>/etc/elogind/sleep.conf</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="orgc832b0c">[Sleep]
+<pre class="src src-nil" id="org01b6a2f">[Sleep]
 AllowSleep=no
 </pre>
 </div>
@@ -166,8 +160,8 @@ name of the file can be anything, but it must be in
 </p>
 </div>
 </div>
-<div id="outline-container-orgca5671e" class="outline-3">
-<h3 id="orgca5671e"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
+<div id="outline-container-orgc9c6216" class="outline-3">
+<h3 id="orgc9c6216"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Alternatively, you can write under <code>[Login]</code> in
@@ -175,7 +169,7 @@ Alternatively, you can write under <code>[Login]</code> in
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="org4e991e3">[Login]
+<pre class="src src-nil" id="org533b852">[Login]
 LidSwitchIgnoreInhibited=no
 </pre>
 </div>
