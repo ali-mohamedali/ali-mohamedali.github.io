@@ -8,7 +8,7 @@
       }
       #preamble ul {
 	  padding-left: 1.2em;
-	  list-marker-type: none;
+	  list-style-type: none;
 	  margin: 0; }
       #preamble ul li::before {
 	  content: "-"; }
