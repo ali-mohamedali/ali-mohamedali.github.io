@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-08-31 Mon 00:54 -->
+<!-- 2026-08-31 Mon 23:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The first few images!</title>
@@ -93,13 +93,13 @@ now we can show some of the source code behind it.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh">#!/bin/bash
+<pre class="src src-sh"><code>#!/bin/bash
 
 sed -i -Ee \
     's;\[\[https:\/\/drive.google.com\/file\/d\/(.{,35})\/view\?.*\]\];@@html:&lt;center&gt;&lt;img src=\"https://lh3.googleusercontent.com/d/\1\"&gt;&lt;/center&gt;@@;g' $1;
 sed -i -Ee \
     's;\/view\?usp=drive_link;;g' $1
-</pre>
+</code></pre>
 </div>
 
 <p>
@@ -112,7 +112,7 @@ somewhere where the resources are being kept.
 <p>
 I don't exactly know if it'll change any time in the future.  From
 that linked post, one can tell that Google does change their drive url
-argument syntax &#x2014; in shell terminology &#x2014; but I haven't seen a
+argument syntax &mdash; in shell terminology &mdash; but I haven't seen a
 change in the Google Drive image storage domain/URL scheming.  This is
 probably for longevity, since I can imagine holding the world's images
 on your shoulders does incur the responsibility that you don't handle
