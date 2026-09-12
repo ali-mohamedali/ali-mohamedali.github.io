@@ -9,6 +9,15 @@
   <id>aba27805-8377-4370-8bc9-7d1ac2ef7771</id>
 
   <entry>
+    <link href="http://ali-mohamedali.github.io/blog/20260912-1.html"/>
+    <title>(SlackGrab) A package-fetching+compiling tool for slackbuilds.org</title>
+    <updated>2026-09-12T08:27:55:00+03:00</updated>
+    <id>2026-09-12T08:27:55:00+03:00</id>
+    <summary>
+I had written a shell script that fetches packages and installs them for me, designed for slackware.
+    </summary>
+  </entry>
+  <entry>
     <link href="http://ali-mohamedali.github.io/blog/20260830-1.html"/>
     <title>Modifying sleep behaviour on linux with elogind</title>
     <updated>2026-08-30T19:06:34:00+03:00</updated>
