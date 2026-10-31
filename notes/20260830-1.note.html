@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-09-21 Mon 15:09 -->
+<!-- 2026-10-31 Sat 11:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modifying sleep behaviour on linux with elogind</title>
@@ -63,7 +63,7 @@
 </ul>
 <br>
 <details><summary>Posts by tag</summary><p style="margin:2px;">
- <a href="/tag/art.html">art (1)</a> | <a href="/tag/doodle.html">doodle (1)</a> | <a href="/tag/elogind.html">elogind (1)</a> | <a href="/tag/emacs.html">emacs (1)</a> | <a href="/tag/email.html">email (1)</a> | <a href="/tag/gnu.html">gnu (2)</a> | <a href="/tag/image.html">image (1)</a> | <a href="/tag/linux.html">linux (2)</a> | <a href="/tag/meta.html">meta (1)</a> | <a href="/tag/script.html">script (1)</a> | <a href="/tag/sh.html">sh (1)</a> | <a href="/tag/slackware.html">slackware (1)</a> | <a href="/tag/tech.html">tech (5)</a> | <a href="/tag/test.html">test (2)</a> | <a href="/tag/time.html">time (1)</a> | <a href="/tag/web.html">web (1)</a> 
+ <a href="/tag/art.html">art (1)</a> | <a href="/tag/consciousness.html">consciousness (2)</a> | <a href="/tag/doodle.html">doodle (1)</a> | <a href="/tag/elogind.html">elogind (1)</a> | <a href="/tag/emacs.html">emacs (1)</a> | <a href="/tag/email.html">email (1)</a> | <a href="/tag/essay.html">essay (2)</a> | <a href="/tag/gnu.html">gnu (2)</a> | <a href="/tag/image.html">image (1)</a> | <a href="/tag/linux.html">linux (2)</a> | <a href="/tag/meta.html">meta (1)</a> | <a href="/tag/metaphysics.html">metaphysics (2)</a> | <a href="/tag/philosophy.html">philosophy (2)</a> | <a href="/tag/script.html">script (1)</a> | <a href="/tag/sh.html">sh (1)</a> | <a href="/tag/slackware.html">slackware (1)</a> | <a href="/tag/tech.html">tech (5)</a> | <a href="/tag/test.html">test (2)</a> | <a href="/tag/time.html">time (1)</a> | <a href="/tag/web.html">web (1)</a> 
 </p></details>
 </div>
 </div>
@@ -73,10 +73,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga8a96b1">1. Sleep</a>
+<li><a href="#orgcd7fc04">1. Sleep</a>
 <ul>
-<li><a href="#orgad6c6b4">1.1. Preventing sleep altogether</a></li>
-<li><a href="#org07417ac">1.2. Preventing sleep on the close of a lid</a></li>
+<li><a href="#org4fd517f">1.1. Preventing sleep altogether</a></li>
+<li><a href="#org0c42649">1.2. Preventing sleep on the close of a lid</a></li>
 </ul>
 </li>
 </ul>
@@ -99,8 +99,8 @@ keep dust away.
 <p>
 It's quite easy to do.
 </p>
-<div id="outline-container-orga8a96b1" class="outline-2">
-<h2 id="orga8a96b1"><span class="section-number-2">1.</span> Sleep</h2>
+<div id="outline-container-orgcd7fc04" class="outline-2">
+<h2 id="orgcd7fc04"><span class="section-number-2">1.</span> Sleep</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You should follow any of the edit in the following sections, then
@@ -136,15 +136,15 @@ If you are using OpenRC:
 </pre>
 </div>
 </div>
-<div id="outline-container-orgad6c6b4" class="outline-3">
-<h3 id="orgad6c6b4"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
+<div id="outline-container-org4fd517f" class="outline-3">
+<h3 id="org4fd517f"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 The easiest way to prevent sleep is to edit <code>/etc/elogind/sleep.conf</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="orge04303b">[Sleep]
+<pre class="src src-nil" id="orgc19fb43">[Sleep]
 AllowSleep=no
 </pre>
 </div>
@@ -156,8 +156,8 @@ name of the file can be anything, but it must be in
 </p>
 </div>
 </div>
-<div id="outline-container-org07417ac" class="outline-3">
-<h3 id="org07417ac"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
+<div id="outline-container-org0c42649" class="outline-3">
+<h3 id="org0c42649"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Alternatively, you can write under <code>[Login]</code> in
@@ -165,7 +165,7 @@ Alternatively, you can write under <code>[Login]</code> in
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="orgf7935f2">[Login]
+<pre class="src src-nil" id="orga6a5885">[Login]
 LidSwitchIgnoreInhibited=no
 </pre>
 </div>
