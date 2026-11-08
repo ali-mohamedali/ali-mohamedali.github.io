@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-11-08 Sun 13:58 -->
+<!-- 2026-11-08 Sun 14:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modifying sleep behaviour on linux with elogind</title>
@@ -82,10 +82,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga3cdb5b">1. Sleep</a>
+<li><a href="#orgc587d9a">1. Sleep</a>
 <ul>
-<li><a href="#orgb43412a">1.1. Preventing sleep altogether</a></li>
-<li><a href="#org2fe6801">1.2. Preventing sleep on the close of a lid</a></li>
+<li><a href="#org0a8f6ae">1.1. Preventing sleep altogether</a></li>
+<li><a href="#org93b2731">1.2. Preventing sleep on the close of a lid</a></li>
 </ul>
 </li>
 </ul>
@@ -108,8 +108,8 @@ keep dust away.
 <p>
 It's quite easy to do.
 </p>
-<div id="outline-container-orga3cdb5b" class="outline-2">
-<h2 id="orga3cdb5b"><span class="section-number-2">1.</span> Sleep</h2>
+<div id="outline-container-orgc587d9a" class="outline-2">
+<h2 id="orgc587d9a"><span class="section-number-2">1.</span> Sleep</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 You should follow any of the edit in the following sections, then
@@ -145,15 +145,15 @@ If you are using OpenRC:
 </pre>
 </div>
 </div>
-<div id="outline-container-orgb43412a" class="outline-3">
-<h3 id="orgb43412a"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
+<div id="outline-container-org0a8f6ae" class="outline-3">
+<h3 id="org0a8f6ae"><span class="section-number-3">1.1.</span> Preventing sleep altogether</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 The easiest way to prevent sleep is to edit <code>/etc/elogind/sleep.conf</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="org4784a67">[Sleep]
+<pre class="src src-nil" id="orgcd7e56e">[Sleep]
 AllowSleep=no
 </pre>
 </div>
@@ -165,8 +165,8 @@ name of the file can be anything, but it must be in
 </p>
 </div>
 </div>
-<div id="outline-container-org2fe6801" class="outline-3">
-<h3 id="org2fe6801"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
+<div id="outline-container-org93b2731" class="outline-3">
+<h3 id="org93b2731"><span class="section-number-3">1.2.</span> Preventing sleep on the close of a lid</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Alternatively, you can write under <code>[Login]</code> in
@@ -174,7 +174,7 @@ Alternatively, you can write under <code>[Login]</code> in
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nil" id="orgfde506e">[Login]
+<pre class="src src-nil" id="orgf6e7112">[Login]
 LidSwitchIgnoreInhibited=no
 </pre>
 </div>
