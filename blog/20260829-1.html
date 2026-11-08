@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-11-08 Sun 12:46 -->
+<!-- 2026-11-08 Sun 12:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading your mail inside GNU Emacs with GNus</title>
@@ -82,18 +82,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcddda67">1. ~/.emacs</a>
+<li><a href="#org299a63e">1. ~/.emacs</a>
 <ul>
-<li><a href="#org3aaf88e">1.1. IMAP setup</a></li>
-<li><a href="#org82af903">1.2. SMTP setup</a></li>
+<li><a href="#org0af7af6">1.1. IMAP setup</a></li>
+<li><a href="#org91fa447">1.2. SMTP setup</a></li>
 </ul>
 </li>
-<li><a href="#org38f9f04">2. ~/.authinfo and passwords</a>
+<li><a href="#org728dd5f">2. ~/.authinfo and passwords</a>
 <ul>
-<li><a href="#org30954ab">2.1. What password to use?</a></li>
+<li><a href="#orged72a50">2.1. What password to use?</a></li>
 </ul>
 </li>
-<li><a href="#org581c212">3. Trying it out</a></li>
+<li><a href="#orgc62a77d">3. Trying it out</a></li>
 </ul>
 </div>
 </div>
@@ -126,12 +126,12 @@ For this example, we are going to be using IMAP to receive our emails,
 and send through SMTP.  We will not be downloading a complete log of
 all messages(POP3 format).
 </p>
-<div id="outline-container-orgcddda67" class="outline-2">
-<h2 id="orgcddda67"><span class="section-number-2">1.</span> ~/.emacs</h2>
+<div id="outline-container-org299a63e" class="outline-2">
+<h2 id="org299a63e"><span class="section-number-2">1.</span> ~/.emacs</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org3aaf88e" class="outline-3">
-<h3 id="org3aaf88e"><span class="section-number-3">1.1.</span> IMAP setup</h3>
+<div id="outline-container-org0af7af6" class="outline-3">
+<h3 id="org0af7af6"><span class="section-number-3">1.1.</span> IMAP setup</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(setq gnus-secondary-select-methods
@@ -189,8 +189,8 @@ way everything is included.
 </p>
 </div>
 </div>
-<div id="outline-container-org82af903" class="outline-3">
-<h3 id="org82af903"><span class="section-number-3">1.2.</span> SMTP setup</h3>
+<div id="outline-container-org91fa447" class="outline-3">
+<h3 id="org91fa447"><span class="section-number-3">1.2.</span> SMTP setup</h3>
 <div class="outline-text-3" id="text-1-2">
 <div class="org-src-container">
 <pre class="src src-elisp">(setq smtpmail-smtp-server "smtp.gmail.com"
@@ -212,8 +212,8 @@ you will be prompted to choose from a list; Type smtp therein.</dd>
 </div>
 </div>
 </div>
-<div id="outline-container-org38f9f04" class="outline-2">
-<h2 id="org38f9f04"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
+<div id="outline-container-org728dd5f" class="outline-2">
+<h2 id="org728dd5f"><span class="section-number-2">2.</span> ~/.authinfo and passwords</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Passwords need to be specified in <code>~/.authinfo</code>.
@@ -239,8 +239,8 @@ machine smtp.gmail.com login user@gmail.com password &lt;app-password&gt; port 5
 </pre>
 </div>
 </div>
-<div id="outline-container-org30954ab" class="outline-3">
-<h3 id="org30954ab"><span class="section-number-3">2.1.</span> What password to use?</h3>
+<div id="outline-container-orged72a50" class="outline-3">
+<h3 id="orged72a50"><span class="section-number-3">2.1.</span> What password to use?</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The password situation is a little strange.
@@ -285,8 +285,8 @@ the password fields in your .authinfo file.  That should work.
 </div>
 </div>
 </div>
-<div id="outline-container-org581c212" class="outline-2">
-<h2 id="org581c212"><span class="section-number-2">3.</span> Trying it out</h2>
+<div id="outline-container-orgc62a77d" class="outline-2">
+<h2 id="orgc62a77d"><span class="section-number-2">3.</span> Trying it out</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 &#x2026; Et voila!  It should work now.
